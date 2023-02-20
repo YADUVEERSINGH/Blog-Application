@@ -1,18 +1,23 @@
 package com.backend.blog;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
-//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-//@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class BlogAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BlogAppApplication.class, args);
 	}
-
+	
+	
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
 }
